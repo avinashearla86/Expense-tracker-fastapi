@@ -4,7 +4,7 @@ from app.routers import users, expenses
 from app import models
 from app.database import engine
 
-# ✅ Create database tables (if they don’t already exist)
+# ✅ Create database tables
 models.Base.metadata.create_all(bind=engine)
 
 # ✅ Initialize FastAPI app
@@ -14,10 +14,16 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# ✅ Enable CORS for frontend access
+# ✅ Allow frontend URLs
+origins = [
+    "http://localhost:5173",  # Local development
+    "https://expense-tracker-fastapi-topaz.vercel.app",  # Vercel deployed frontend
+]
+
+# ✅ Enable CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Change "*" to your frontend URL in production
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
