@@ -1,4 +1,13 @@
 /* Register Page Styles */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
 .register-container {
     max-width: 400px;
     margin: 100px auto;

@@ -18,11 +18,13 @@ export default function Register() {
   };
 
   return (
+    <div className="auth-page">
     <form onSubmit={handleSubmit}>
         <h2>New User Registration</h2>
       <input placeholder="Email" onChange={(e) => setForm({ ...form, email: e.target.value })} />
       <input type="password" placeholder="Password" onChange={(e) => setForm({ ...form, password: e.target.value })} />
       <button type="submit">Register</button>
     </form>
+    </div>
   );
 }

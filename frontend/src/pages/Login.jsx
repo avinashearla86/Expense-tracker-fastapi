@@ -19,6 +19,7 @@ export default function Login() {
   };
 
   return (
+    <div className="auth-page">
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
       <input
@@ -38,5 +39,6 @@ export default function Login() {
         </p>
       </div>
     </form>
+    </div>
   );
 }
